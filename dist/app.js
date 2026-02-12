@@ -1,5 +1,7 @@
 import express from "express";
 import userRoutes from "./routes/userRoutes.js";
+import sequelize from "./config/database.js";
+import Userfgdf from "./models/User.js";
 const app = express();
 const PORT = 3000;
 app.get("/", (req, res) => {
@@ -20,7 +22,13 @@ app.get("/api/hello/:name", (req, res) => {
     });
 });
 app.use("/api/users", userRoutes);
-app.listen(PORT, () => {
-    console.log(`Serveur lancé sur http://localhost:${PORT}`);
+sequelize.sync().then(() => {
+    console.log("La base de données a été synchronisée");
+    Userfgdf.create({ nom: "Dupont", prenom: "Alice" }).then(() => {
+        console.log("Utilisateur créé");
+    });
+    app.listen(PORT, async () => {
+        console.log(`Serveur lancé sur http://localhost:${PORT}`);
+    });
 });
 //# sourceMappingURL=app.js.map
