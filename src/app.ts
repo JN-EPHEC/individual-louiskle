@@ -1,6 +1,7 @@
 import express from "express";
 import type { Request, Response } from "express";
 import userRoutes from "./routes/userRoutes.js";
+import courseRoutes from "./routes/courseRoutes.js";
 import sequelize from "./config/database.js";
 import Userfgdf from "./models/User.js";
 
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.use("/api/users", userRoutes);
+app.use("/api/courses", courseRoutes);
 
 sequelize.sync().then(() => {
   console.log("La base de données a été synchronisée");
