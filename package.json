@@ -1,0 +1,27 @@
+{
+  "name": "individual-louiskle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install --prefix server && npm install --prefix client",
+    "start:server": "npm run start --prefix server",
+    "start:client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run start:server\" \"npm run start:client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JN-EPHEC/individual-louiskle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/JN-EPHEC/individual-louiskle/issues"
+  },
+  "homepage": "https://github.com/JN-EPHEC/individual-louiskle#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
