@@ -4,6 +4,7 @@
     "start": "npx tsc && node dist/app.js"
   },
   "dependencies": {
+    "cors": "^2.8.6",
     "express": "^5.2.1",
     "moment": "^2.30.1",
     "sequelize": "^6.37.7",
@@ -12,6 +13,7 @@
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.8",
