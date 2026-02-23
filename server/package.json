@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "start": "npx tsc && node dist/app.js"
+    "start": "tsx watch src/app.ts"
   },
   "dependencies": {
     "cors": "^2.8.6",
