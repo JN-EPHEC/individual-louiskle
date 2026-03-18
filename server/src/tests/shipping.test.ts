@@ -1,8 +1,8 @@
-import { calculateShipping } from "./shipping";
+import { calculateShipping } from "../utils/shipping";
 
 describe("test de shipping", () => {
 
-  const tests = [
+  const tests: [number, number, string, number, string][] = [
     [0, 5, "standard", 10, "distance 0 km"],
     [25, 5, "standard", 10, "distance 25 km"],
     [50, 5, "standard", 10, "distance 50 km"],
@@ -16,11 +16,14 @@ describe("test de shipping", () => {
 
   for (let i = 0; i < tests.length; i++) {
 
-    const distance = tests[i][0];
-    const weight = tests[i][1];
-    const type = tests[i][2];
-    const expected = tests[i][3];
-    const description = tests[i][4];
+    const test = tests[i];
+    if (!test) continue;
+
+    const distance = test[0];
+    const weight = test[1];
+    const type = test[2];
+    const expected = test[3];
+    const description = test[4];
 
     it(description as string, () => {
       expect(calculateShipping(distance as number, weight as number, type as any)).toBe(expected);
